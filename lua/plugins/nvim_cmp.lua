@@ -5,6 +5,10 @@ return {
     -- Rest of your plugin spec
     config = function()
       local cmp = require("cmp")
+      local luasnip = require 'luasnip'
+      require('luasnip.loaders.from_vscode').lazy_load()
+      luasnip.config.setup {}
+
       cmp.setup({
         snippet = {
           -- REQUIRED - you must specify a snippet engine

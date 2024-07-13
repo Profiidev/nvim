@@ -2,6 +2,7 @@ return {
   { 
     'folke/which-key.nvim', 
     opts = {},
+    lazy = false,
     config = function()
       require('which-key').register {
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
@@ -16,9 +17,11 @@ return {
       -- register which-key VISUAL mode
       -- required for visual <leader>hs (hunk stage) to work
       require('which-key').register({
-        ['<leader>'] = { name = 'VISUAL <leader>' },
         ['<leader>h'] = { 'Git [H]unk' },
       }, { mode = 'v' })
-    end
+    end,
+    dependencies = {
+      "echasnovski/mini.icons",
+    }
   },
 }
