@@ -56,12 +56,22 @@ return {
             end
           end, { 'i', 's' }),
         },
-        sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
-        },
+        sources = cmp.config.sources({
+            { name = 'nvim_lsp' },
+            { name = 'luasnip' },
+            { name = 'path' },
+            { name = 'git' }
+          }, {
+            { name = 'buffer' }
+          }),
+        cmp.setup.filetype('gitcommit', {
+            { name = 'git' }
+          }, {
+            { name = 'buffer' }
+          })
       })
+
+      require("cmp_git").setup()
 
       cmp.setup.cmdline({ '/', '?' }, {
         mapping = cmp.mapping.preset.cmdline(),
@@ -89,7 +99,8 @@ return {
       { "hrsh7th/cmp-path" },
       { "neovim/nvim-lspconfig" },
       { "L3MON4D3/LuaSnip" },
-      { "saadparwaiz1/cmp_luasnip" }
+      { "saadparwaiz1/cmp_luasnip" },
+      { "petertriho/cmp-git" }
     }
   }
 }
