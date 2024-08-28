@@ -4,21 +4,21 @@ return {
     opts = {},
     lazy = false,
     config = function()
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+      require('which-key').add {
+        { '<leader>c', group = '[C]ode', hidden = true },
+        { '<leader>d', group = '[D]ocument', hidden = true },
+        { '<leader>g', group = '[G]it', hidden = true },
+        { '<leader>h', group = 'Git [H]unk', hidden = true },
+        { '<leader>r', group = '[R]ename', hidden = true },
+        { '<leader>s', group = '[S]earch', hidden = true },
+        { '<leader>t', group = '[T]oggle', hidden = true },
+        { '<leader>w', group = '[W]orkspace', hidden = true },
       }
       -- register which-key VISUAL mode
       -- required for visual <leader>hs (hunk stage) to work
-      require('which-key').register({
-        ['<leader>h'] = { 'Git [H]unk' },
-      }, { mode = 'v' })
+      require('which-key').add({
+        { '<leader>h', group = 'Git [H]unk', mode = 'v' },
+      })
     end,
     dependencies = {
       "echasnovski/mini.icons",

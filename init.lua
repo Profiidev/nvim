@@ -3,6 +3,7 @@ vim.g.maplocalleader = ' '
 
 require("config.lazy")
 
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
@@ -70,3 +71,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+vim.diagnostic.config({
+  update_in_insert = true
+})
+
+vim.bo.tabstop = 4
+vim.bo.shiftwidth = 4
+
+require('ayu').colorscheme('ayu-dark')
