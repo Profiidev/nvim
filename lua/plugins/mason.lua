@@ -73,13 +73,16 @@ return {
     dependencies = {
       {
         "williamboman/mason.nvim",
-        config = function()
-          require("mason").setup()
-        end
       },
       {
         "williamboman/mason-lspconfig.nvim",
         config = function()
+          require("mason").setup()
+          require("mason-lspconfig").setup()
+
+          local capabilities = vim.lsp.protocol.make_client_capabilities()
+          capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
           local mason_lspconfig = require("mason-lspconfig")
   
           mason_lspconfig.setup {
