@@ -151,7 +151,7 @@ return {
     config = function ()
       require("inlay-hints").setup()
     end
-  }
+  },
 
   {
     'rust-lang/rust.vim',
