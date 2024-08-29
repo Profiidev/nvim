@@ -13,6 +13,7 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -80,3 +81,11 @@ vim.bo.tabstop = 4
 vim.bo.shiftwidth = 4
 
 require('ayu').colorscheme('ayu-dark')
+
+vim.cmd.map "<Up> <Nop>"
+vim.cmd.map "<Down> <Nop>"
+vim.cmd.map "<Left> <Nop>"
+vim.cmd.map "<Right> <Nop>"
+
+vim.cmd.highlight "LineNr guifg=#d0cfcc"
+
