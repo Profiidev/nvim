@@ -54,38 +54,18 @@ local servers = {
   -- gopls = {},
   pyright = {},
   rust_analyzer = {
-    inlayHints = {
-      bindingModeHints = {
-        enable = false,
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        command = "clippy",
+        allFeatures = true
       },
-      chainingHints = {
+      inlayHints = {
         enable = true,
+        showParameterNames = true,
+        parameterHintsPrefix = "<- ",
+        otherHintsPrefix = "=> ",
       },
-      closingBraceHints = {
-        enable = true,
-        minLines = 25,
-      },
-      closureReturnTypeHints = {
-        enable = "never",
-      },
-      lifetimeElisionHints = {
-        enable = "never",
-        useParameterNames = false,
-      },
-      maxLength = 25,
-      parameterHints = {
-        enable = true,
-      },
-      reborrowHints = {
-        enable = "never",
-      },
-      renderColons = true,
-      typeHints = {
-        enable = true,
-        hideClosureInitialization = false,
-        hideNamedConstructor = false,
-      },
-    },
+    }
   },
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs'} },
