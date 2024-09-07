@@ -82,10 +82,14 @@ vim.bo.shiftwidth = 4
 
 require('ayu').colorscheme('ayu-dark')
 
-vim.cmd.map "<Up> <Nop>"
-vim.cmd.map "<Down> <Nop>"
-vim.cmd.map "<Left> <Nop>"
-vim.cmd.map "<Right> <Nop>"
+for k, key2 in pairs({'<up>', '<down>', '<left>', '<right>', '<cr>', '<bs>'}) do
+  vim.cmd.nnoremap(key2 .. ' <Nop>')
+  vim.cmd.vnoremap(key2 .. ' <Nop>')
+  vim.cmd.cnoremap(key2 .. ' <Nop>')
+  vim.cmd.inoremap(key2 .. ' <Nop>')
+end
 
 vim.cmd.highlight "LineNr guifg=#d0cfcc"
+
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
