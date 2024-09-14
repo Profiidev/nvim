@@ -82,7 +82,7 @@ vim.bo.shiftwidth = 4
 
 require('ayu').colorscheme('ayu-dark')
 
-for k, key2 in pairs({'<up>', '<down>', '<left>', '<right>', '<cr>', '<bs>'}) do
+for k, key2 in pairs({'<up>', '<down>', '<left>', '<right>', '<bs>'}) do
   vim.cmd.nnoremap(key2 .. ' <Nop>')
   vim.cmd.vnoremap(key2 .. ' <Nop>')
   vim.cmd.cnoremap(key2 .. ' <Nop>')
